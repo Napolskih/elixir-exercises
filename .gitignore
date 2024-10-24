@@ -1,3 +1,5 @@
+/.DS_Store
+
 # The directory Mix will write compiled artifacts to.
 /*/_build/
 
@@ -42,3 +44,6 @@ openapi.yaml
 
 # Environment file
 /*/.env
+
+/*/*.db
+/*/*.db-*
