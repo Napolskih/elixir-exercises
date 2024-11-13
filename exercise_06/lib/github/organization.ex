@@ -1,4 +1,6 @@
 defmodule Github.Organization do
+  @moduledoc false
+
   use Ecto.Schema
 
   schema "organizations" do
