@@ -32,7 +32,9 @@ defmodule Github.Mixfile do
     [
       {:ecto, "~> 3.12"},
       {:ecto_sqlite3, "~> 0.17"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 end
