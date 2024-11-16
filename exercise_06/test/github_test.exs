@@ -1,7 +1,7 @@
 defmodule GithubTest do
   use ExUnit.Case
 
-  alias Github.{User, Organization, UserOrganization, Repo}
+  alias Github.{Organization, Repo, User, UserOrganization}
 
   test "the truth" do
     ryan = %User{first_name: "Ryan", last_name: "Bigg"} |> Repo.insert!()
@@ -12,15 +12,15 @@ defmodule GithubTest do
     %UserOrganization{user: ryan, organization: o} |> Repo.insert!()
     %UserOrganization{user: john, organization: o} |> Repo.insert!()
 
-    assert  Repo.aggregate(UserOrganization, :count) == 2
+    assert Repo.aggregate(UserOrganization, :count) == 2
 
     ryan |> Repo.delete()
 
-    assert  Repo.aggregate(UserOrganization, :count) == 1
+    assert Repo.aggregate(UserOrganization, :count) == 1
 
     john |> Repo.delete()
 
-    assert  Repo.aggregate(UserOrganization, :count) == 0
-    assert  Repo.aggregate(User, :count) == 0
+    assert Repo.aggregate(UserOrganization, :count) == 0
+    assert Repo.aggregate(User, :count) == 0
   end
 end
